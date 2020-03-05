@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet">
+		<link type='text/css' rel='stylesheet' href='style.css'>
+		<title>Budget</title>
+	</head>
+	<body>
+		<div id='wrapper'>
+<!-- top -->
+		<div class='top-container'>
+			<img class='icon-month' src='img/summer.gif' alt='icon-month'>
+			<div class='budget-title'>
+				<h2>Available Budget in</h2>
+				<span class='budget-title-date'>%Month%</span>
+			</div>
+			<div class='budget-value'>$ 0,00</div>
+		</div>
+
+		<div class='general-value-container'>
+			<!--Main income-->
+			<div class='value-container'>
+				<img class='icon' src='img/coin.gif' alt='icon-income'>
+				<div class='income-value-container'>
+					<div class='kind-value-text main-text'>
+						INCOME  
+						<span class='income-value'>0,00</span>
+					</div>
+				</div>
+			</div>
+			<!--Main expenses-->
+			<div class='value-container'>
+				<img class='icon' src='img/billete.gif' alt='icon-expenses'>
+				<div class='expenses-value-container'>
+					<div class='kind-value-text main-text'>
+						EXPENSES  
+						<span class='expenses-value'>0,00</span>
+					</div>
+				</div>
+			</div>
+		</div>
+<!--Input new value-->
+		<div class='add-container'>
+			<select class="add-type">
+				<option value="income" selected>+</option>
+				<option value="expense">-</option>
+			</select>
+			<input type='text' class='add-box main-text add-description' placeholder='Add description'>
+			<input type='number' class='add-box main-text add-value' placeholder='$ 0,00'>
+			<button class='check-button'>+</button>
+		</div>
+		
+		<div class='general-list-container'>
+			<!--List income-->
+			<div class='list-container'>
+				<div class='title-list income'>
+					INCOME
+				</div>
+				<div class='list list-income'>
+				<!-- new value income-->
+				<!--
+					<div class='item-list-container clear' id='income-0'>
+						<div class='item-description'>%carro%</div>
+						<div class='value-right'>
+							<div class='item-value clear'>%355%</div>
+							<div class='delete-container'>
+								<button class='delete-item'>x</button>
+							</div>
+						</div>	
+					</div>	
+				-->
+				</div>
+			</div>
+
+			<!--percentage-->
+
+			<div class='percentage-value'> 0% </div>
+			
+
+			<!--List expenses-->
+			<div class='list-container'>
+				<div class='title-list expenses'>
+					EXPENSES
+				</div>
+				<div class='list list-expenses'>
+				<!-- new value income-->
+				<!--
+				<div class='item-list-container clear' id='expense-0'>
+						<div class='item-description'>%carro%</div>
+						<div class='value-right'>
+							<div class='item-value clear'>%355%</div>
+							<div class='item-percentage'>%21%%</div>
+							<div class='delete-container'>
+								<button class='delete-item'>x</button>
+							</div>
+						</div>	
+					</div>		
+				</div>
+				-->
+			</div>
+		</div>
+		<script src='app.js'></script>
+	</div>
+	</body>
+</html>
