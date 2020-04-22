@@ -1,3 +1,3 @@
 # Budget application
 
-This is a simple vanilla JS application based on Jonas Schmedtmann's [_Master JavaScript course_](https://www.udemy.com/course/the-complete-javascript-course/).
+This is a simple vanilla JS application inspired by Jonas Schmedtmann's [_JavaScript course_](https://www.udemy.com/course/the-complete-javascript-course/).

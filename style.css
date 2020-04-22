@@ -1,3 +1,25 @@
+/* ************* Light mode ************* */
+:root {
+  --background-color: white;
+  --budget-color: #82e3ee;
+  --font-color: #95989a;
+  --expenses-color: #f27e63;
+  --income-color: #5fdeae;
+  --check-button-color: #36eb5d;
+  --icon-mode: url(img/coin.gif);
+}
+
+/* ************* Dark mode ************* */
+
+[data-theme='dark'] {
+  --background-color: #250142;
+  --budget-color: #923ed6;
+  --font-color: #e1cff2;
+  --expenses-color: #ff8401;
+  --income-color: #04c6b4;
+  --check-button-color: #1f75e3;
+}
+
 /* ************* GENERAL **************** */
 @font-face {
   font-family: 'OCR A Std';
@@ -9,21 +31,20 @@
 body {
   width: 100%;
   position: relative;
-  background-color: #021859;
+  background-color: var(--background-color);
+  color: var(--font-color);
 }
 
 h1 {
   font-family: 'OCR A Std', sans-serif;
   font-weight: 700;
   font-size: 18px;
-  color: #95989a;
 }
 
 h2 {
   font-family: 'Lato', sans-serif;
   font-weight: 300;
   font-size: 14px;
-  color: #95989a;
 }
 
 #wrapper {
@@ -38,8 +59,8 @@ h2 {
 }
 
 .icon-month {
-  height: 60px;
-  width: 60px;
+  height: 55px;
+  width: 55px;
   margin-top: 6px;
   margin-left: 80px;
   margin-bottom: 16px;
@@ -69,7 +90,7 @@ h2 {
   text-align: center;
   font-family: 'OCR A Std', sans-serif;
   font-weight: 400;
-  font-size: 40px;
+  font-size: 30px;
   color: white;
   border-radius: 10px;
 }
@@ -78,12 +99,11 @@ h2 {
   font-family: 'OCR A Std', sans-serif;
   font-weight: 700;
   font-size: 16px;
-  color: #95989a;
 }
 
 .budget-value,
 .add-container {
-  background-color: #82e3ee;
+  background-color: var(--budget-color);
 }
 
 /* ********************** MAIN VALUES ******************* */
@@ -132,14 +152,18 @@ h2 {
 }
 
 .income,
-.income-value-container {
-  background-color: #5fdeae;
+.income-value-container,
+.percentage-value {
+  background-color: var(--income-color);
+}
+
+.check-button {
+  background-color: var(--check-button-color);
 }
 
 .expenses,
-.expenses-value-container,
-.percentage-value {
-  background-color: #f27e63;
+.expenses-value-container {
+  background-color: var(--expenses-color);
 }
 
 /* **************** INPUT ******************* */
@@ -158,7 +182,7 @@ h2 {
   border: none;
   height: 25px;
   font-size: 18px;
-  color: #6a6b6d;
+  color: var(--font-color);
   margin-left: 30px;
   background-color: #fff;
 }
@@ -203,10 +227,10 @@ input[type='number'] {
   color: white;
   border-radius: 12px;
   font-family: 'OCR A Std', sans-serif;
-  background-color: #6eda54;
 }
 
 /* ************* LIST ****************** */
+
 .general-list-container {
   width: calc(500px + 140 * ((100vw - 320px) / 680));
   margin: 0 auto;
@@ -247,15 +271,15 @@ input[type='number'] {
 .item-percentage,
 .delete-container {
   float: left;
-  color: #6a6b6d;
+  color: var(--font-color);
 }
 
 .value-color-expenses {
-  color: #e27194 !important;
+  color: var(--expenses-color) !important;
 }
 
 .value-color-income {
-  color: #5fdeae !important;
+  color: var(--income-color) !important;
 }
 
 .value-right {
@@ -323,4 +347,61 @@ input[type='number'] {
   font-weight: 400;
   font-size: 20px;
   color: white;
+}
+
+/* ************* SWITCH BUTTON ****************** */
+
+.theme-switch-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+}
+
+.theme-switch {
+  display: inline-block;
+  height: 27px;
+  position: relative;
+  width: 53px;
+}
+
+.theme-switch input {
+  display: none;
+}
+
+.slider {
+  background-color: #ccc;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: 0.4s;
+}
+
+.slider:before {
+  background-color: #fff;
+  bottom: 3px;
+  height: 21px;
+  left: 4px;
+  position: absolute;
+  transition: 0.4s;
+  width: 21px;
+  content: '';
+}
+
+input:checked + .slider {
+  background-color: #ffda0b;
+}
+
+input:checked + .slider:before {
+  transform: translateX(23px);
+}
+
+.slider.round {
+  border-radius: 20px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
 }
